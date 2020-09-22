@@ -1,16 +1,14 @@
 import React from "react";
 import ToDo from "./ToDo";
 
-const ToDoList = () => {
+const ToDoList = ({todos}) => {
+    console.log(todos);
     return (
         <div className="todo-container">
             <ul className="todo-list">
-                <ToDo />
-                <ToDo />
-                <ToDo />
-                <ToDo />
-                <ToDo />
-                <ToDo />
+                {todos.map(todo => (
+                    <ToDo text={todo.text}/>
+                ))}
             </ul>
         </div>
     );
